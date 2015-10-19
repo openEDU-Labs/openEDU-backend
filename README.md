@@ -8,18 +8,20 @@ https://docs.djangoproject.com/en/1.8/intro/tutorial01/
 This one is pretty great for learning Heroku 
 https://devcenter.heroku.com/articles/getting-started-with-django
 
-The general procedure to get things running is probably:
+The general procedure to get things running is:
 
 1. Install Heroku toolbelt
 
 2. Clone this repository into some directory
 
-3. Make your changes and push back, it will automatically be deployed
+3. Make your changes and push back, it will automatically be deployed, don't screw anything up because that makes actual changes!!
 
 To run locally, you need to:
 
-1. call "heroku run manage.py syncdb"
+1. make a psql server on your machine called "drkhcv6ebttof"
 
-2. call "heroku local"
+2. call "heroku pg:pull open-edu::databasese drkhcv6ebttof"
 
-Hit me up on Slack if it doesn't work, which it probably won't
+3. call "python manage.py runserver"
+
+4. view whatever changes you made
