@@ -1,0 +1,9 @@
+
+{% block content %}
+    <h2>Teachers</h2>
+    <ul>
+        {% for teacher in object_list %}
+            <li>{{ teacher.teacher_name }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

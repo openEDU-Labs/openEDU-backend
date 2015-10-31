@@ -7,12 +7,14 @@ class Teacher(models.Model):
 	def __str__(self):
 		return self.teacher_name
 
+
 class Course(models.Model):
 	course_name = models.CharField(max_length=50)
 	course_description = models.CharField(max_length=1500)
 	teacher = models.ForeignKey(Teacher)
 	def __str__(self):
 		return self.course_name
+
 
 class Student(models.Model):
 	student_name = models.CharField(max_length=50)

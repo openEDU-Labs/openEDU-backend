@@ -18,10 +18,15 @@ The general procedure to get things running is:
 
 To run locally, you need to:
 
-1. make a psql server on your machine called "drkhcv6ebttof"
+1. be running in a virtual env
+"virtualenv venv"
+"source venv/bin/activate"
 
-2. call "heroku pg:pull open-edu::databasese drkhcv6ebttof"
+2. call "heroku pg:pull open-edu::database drkhcv6ebttof"
+
+3. call "python manage.py migrate"
 
 3. call "python manage.py runserver"
 
 4. view whatever changes you made
+
