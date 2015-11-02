@@ -53,10 +53,10 @@ class Breakpoint(models.Model):
 	get_teacher_name.short_description = 'Teacher'
 
 class BreakpointScore(models.Model):
-	student = models.ForeignKey(Student)
+	student_in_course = models.ForeignKey(StudentInCourse)
 	breakpoint = models.ForeignKey(Breakpoint)
 	score = models.IntegerField(default = 0)
 
 	def __str__(self):
-		return self.breakpoint.breakpoint_name + ' : ' + self.student.student_name
+		return self.breakpoint.breakpoint_name + ' : ' + self.student_in_course.student.student_name
 
