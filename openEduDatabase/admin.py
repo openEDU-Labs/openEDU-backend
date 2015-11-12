@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Teacher, Student, Course, StudentInCourse, Lecture, Breakpoint, BreakpointScore
+from .models import Teacher, Student, Course,  Lecture, Breakpoint, BreakpointScore
 
 
 class CourseInline(admin.StackedInline):
@@ -11,12 +11,8 @@ class TeacherAdmin(admin.ModelAdmin):
 	inlines = [CourseInline]
 	list_display = ('teacher_name', 'teacher_school')
 
-class StudentInCourseInline(admin.StackedInline):
-	model = StudentInCourse
-	extra = 5
 
 class CourseAdmin(admin.ModelAdmin):
-	inlines = [StudentInCourseInline]
 	list_display = ('course_name', 'teacher','course_description')
 
 class StudentAdmin(admin.ModelAdmin):
@@ -30,9 +26,6 @@ class LectureAdmin(admin.ModelAdmin):
 	list_display = ('lecture_name', 'course', 'get_teacher_name')
 	search_fields = ['lecture_name']
 	inlines = [BreakpointInline]
-
-class StudentInCourseAdmin(admin.ModelAdmin):
-	list_display = ('student', 'course')
 
 class BreakpointScoreInline(admin.StackedInline):
 	model = BreakpointScore
@@ -49,7 +42,6 @@ class BreakpointAdmin(admin.ModelAdmin):
 admin.site.register(Student, StudentAdmin)
 admin.site.register(Teacher, TeacherAdmin)
 admin.site.register(Course, CourseAdmin)
-admin.site.register(StudentInCourse, StudentInCourseAdmin)
 admin.site.register(Lecture, LectureAdmin)
 admin.site.register(BreakpointScore)
 admin.site.register(Breakpoint, BreakpointAdmin)
