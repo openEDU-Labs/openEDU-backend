@@ -24,6 +24,8 @@ class Lecture(models.Model):
 	lecture_name = models.CharField(max_length = 50)
 	lecture_description = models.CharField(max_length = 500)
 	course = models.ForeignKey(Course, related_name='lectures')
+	lecture_link = models.CharField(max_length=100)
+	lecture_data = models.TextField()
 	
 	def __str__(self):
 		return self.lecture_name
