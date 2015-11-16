@@ -20,7 +20,7 @@ class LectureSerializer(serializers.ModelSerializer):
 	breakpoints = serializers.PrimaryKeyRelatedField(many=True, queryset=Breakpoint.objects.all())
 	class Meta:
 		model = Lecture
-		fields = ('lecture_name', 'lecture_description','breakpoints', 'course')
+		fields = ('lecture_name', 'lecture_description','breakpoints', 'course', 'lecture_data', 'lecture_link')
 class BreakpointSerializer(serializers.ModelSerializer):
 	breakpoint_scores = serializers.PrimaryKeyRelatedField(many=True, queryset=BreakpointScore.objects.all())
 	lecture = LectureSerializer()
